@@ -2,8 +2,8 @@ import os
 import sys
 from dataclasses import dataclass
 from urllib.parse import urlparse
-#import mlflow
-#import mlflow.sklearn
+import mlflow
+import mlflow.sklearn
 import numpy as np
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 from catboost import CatBoostRegressor
@@ -104,7 +104,7 @@ class ModelTrainer:
             ]
             best_model = models[best_model_name]
 
-            """print("This is the best model:")
+            print("This is the best model:")
             print(best_model_name)
 
             model_names = list(params.keys())
@@ -117,7 +117,7 @@ class ModelTrainer:
 
             best_params = params[actual_model]
 
-            mlflow.set_registry_uri("https://dagshub.com/krishnaik06/mlprojecthindi.mlflow")
+            mlflow.set_registry_uri("https://dagshub.com/alhasannur99/mlproject.mlflow")
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
             # mlflow
@@ -144,7 +144,7 @@ class ModelTrainer:
                     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
                     mlflow.sklearn.log_model(best_model, "model", registered_model_name=actual_model)
                 else:
-                    mlflow.sklearn.log_model(best_model, "model")"""
+                    mlflow.sklearn.log_model(best_model, "model")
 
 
 
